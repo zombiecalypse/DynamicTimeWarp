@@ -10,7 +10,7 @@ name:                DynamicTimeWarp
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             0.1.0.0
+version:             0.1.1.0
 
 -- A short (one-line) description of the package.
 synopsis:            Dynamic time warping of sequences.
@@ -68,13 +68,15 @@ library
   -- Base language which the package is written in.
   default-language:    Haskell2010
   
-executable benchmark
+Test-Suite benchmark
+  type: exitcode-stdio-1.0
   main-is: Benchmark.hs
   hs-source-dirs:      src
   build-depends:       base >=4.6 && <4.7, vector, array, criterion == 1.0.*, random == 1.0.*
   default-language:    Haskell2010
   
-executable test
+Test-Suite test
+  type: exitcode-stdio-1.0
   main-is: Test.hs
   hs-source-dirs:      src
   build-depends:       base >=4.6 && <4.7, vector, array, QuickCheck == 2.7.*
